@@ -12,7 +12,7 @@ var port = 1337; //set listening port to 1337
 
 var router = express.Router();
 
-mongous().open("MONGODB_PORT_27017_TCP_ADDR", 27017);
+mongous().open(process.env.MONGODB_PORT_27017_TCP_ADDR, 27017);
 
 //DONE: basic test for connectivity.
 router.get('/', function(req, res) {
