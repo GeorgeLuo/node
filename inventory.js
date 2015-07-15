@@ -12,7 +12,7 @@ var port = 1337; //set listening port to 1337
 
 var router = express.Router();
 
-mongous().open("127.0.0.1", 27017);
+mongous().open("NODE-MONGO_PORT", 27017);
 
 //DONE: basic test for connectivity.
 router.get('/', function(req, res) {
