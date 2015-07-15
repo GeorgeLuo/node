@@ -16,7 +16,7 @@ mongous().open(process.env.MONGODB_PORT_27017_TCP_ADDR, 27017);
 
 //DONE: basic test for connectivity.
 router.get('/', function(req, res) {
-	res.json({message: 'Inventory Service Home' });
+	res.json({message: 'Inventory Service Home' + process.env.MONGODB_PORT_27017_TCP_ADDR });
 	
 });
 	
