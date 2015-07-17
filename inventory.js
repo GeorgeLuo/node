@@ -1,3 +1,5 @@
+//George Luo
+//July 2015
 var mongous = require('mongous').Mongous;
 var objectID = require("mongous/bson/objectid").ObjectID;
 
