@@ -121,7 +121,7 @@ router.route('/')
 		entry['title'] = req.body.title;
 		entry['stock'] = 0;
 		mongous("test.products").insert(entry);
-		res.json({message : 'Product added to system.'});
+		res.json({message : 'Mediatype: ' + req.body.mediatype + ' Content: ' + req.body.title });
 	});
 	
 //DELETE removes 1 object where object has id = :id
