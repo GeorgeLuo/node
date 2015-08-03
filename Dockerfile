@@ -7,3 +7,5 @@ ADD . /app
 
 CMD []
 ENTRYPOINT ["/nodejs/bin/npm", "test"]
+
+EXPOSE 1337
