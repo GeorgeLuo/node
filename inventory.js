@@ -20,7 +20,7 @@ setTimeout(function() {
 
 //DONE: basic test for connectivity.
 router.get('/', function(req, res) {
-	res.json({message: 'Inventory Service Home' + JSON.stringify(process.env) });
+	res.json({message: 'Inventory Service Home. Query the entries with HTTP request ...inventory/[category]/[identifier]'});
 	
 });
 	
