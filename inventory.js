@@ -14,17 +14,15 @@ var port = 1337; //set listening port to 1337
 
 var router = express.Router();
 
-setTimeout(function() {
-    mongous().open("mongodb", 27017);
-}, 5000);
+mongous().open("mongodb", 27017);
+
+mongous('test.$cmd').auth('node','password',function(reply){});
 
 //DONE: basic test for connectivity.
 router.get('/', function(req, res) {
 	res.json({message: 'Inventory Service Home. Query the entries with HTTP request ...inventory/[category]/[identifier]'});
 	
 });
-
-mongous('test.products').auth('node','password',function(reply){});
 	
 //DONE, basic GET, GET .../inventory/category/identifier (ie title/Titanic or mediatype/novel), returns product.
 router.route('/:category/:identifier')
