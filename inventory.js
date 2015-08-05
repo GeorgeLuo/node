@@ -15,7 +15,7 @@ var port = 1337; //set listening port to 1337
 var router = express.Router();
 
 setTimeout(function() {
-    mongous().open("localhost", 27017);
+    mongous().open("mongodb", 27017);
 }, 5000);
 
 //DONE: basic test for connectivity.
