@@ -23,6 +23,8 @@ router.get('/', function(req, res) {
 	res.json({message: 'Inventory Service Home. Query the entries with HTTP request ...inventory/[category]/[identifier]'});
 	
 });
+
+mongous('test.products').auth('node','password',function(reply){});
 	
 //DONE, basic GET, GET .../inventory/category/identifier (ie title/Titanic or mediatype/novel), returns product.
 router.route('/:category/:identifier')
@@ -30,10 +32,10 @@ router.route('/:category/:identifier')
 		var query = {};
 		query[req.params.category] = req.params.identifier;
 		
-		mongous('test.products').auth('node', 'password', function(reply){find(query, function(docs) {
+		mongous('test.products').find(query, function(docs) {
 			console.log(docs);
 			res.json(docs);
-		}});
+		});
     });
 
 //GET by ID.
