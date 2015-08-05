@@ -30,7 +30,7 @@ router.route('/:category/:identifier')
 		var query = {};
 		query[req.params.category] = req.params.identifier;
 		
-		mongous('test.products').find(query, function(docs) {
+		mongous('test.products').auth('node', 'password').find(query, function(docs) {
 			console.log(docs);
 			res.json(docs);
 		});
