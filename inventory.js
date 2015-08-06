@@ -14,7 +14,7 @@ var port = 1337; //set listening port to 1337
 
 var router = express.Router();
 
-mongous().open("mongodb3", 27017);
+mongous().open("mongodb", 27017);
 
 mongous('test.$cmd').auth('node','password',function(reply){});
 
